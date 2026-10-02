@@ -3,8 +3,12 @@ package Controlador;
 import java.util.Scanner;
 import java.util.Stack;
 import Archivos.Exportar;
+import Archivos.Importar;
 import Modelo.Objeto;
 import Validaciones.Validaciones;
+
+import java.util.LinkedList;
+import java.util.Queue;
 import Vista.Metodos;
 
 public class Principal {
@@ -14,7 +18,9 @@ public class Principal {
         Metodos m = new Metodos();
         Validaciones v = new Validaciones();
         Exportar e = new Exportar();
-        Stack<Objeto> p = new Stack<>();
+        Queue<Objeto> p = new LinkedList<>();
+        Importar i = new Importar();
+        p= i.ImportarArchivo();
 
         boolean continuar = true;
         while (continuar) {

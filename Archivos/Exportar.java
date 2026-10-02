@@ -5,16 +5,16 @@ import java.io.IOException;
 import java.util.LinkedList;
 import java.util.Stack;
 import java.util.UUID;
-
+import java.util.Queue;
 import Modelo.Objeto;
 
 public class Exportar {
-    public void exportarArchivo(Stack<Objeto> p) {
+    public void exportarArchivo(Queue<Objeto> p) {
         if (p.isEmpty()) {
             System.out.println("La lista esta vacia no se puede exportar el archivo");
             return;
         } else {
-            try (FileWriter e = new FileWriter("Estudiantes.txt")) {
+            try (FileWriter e = new FileWriter("Estudiantes.txt")) { // Crea archivo con el nombre "Estudiantes.txt" 
                 for (Objeto obj : p) {
                     e.write("GUID: " + obj.getId() + "\n");
                     e.write("TipoVehiculo: " + obj.getTipoVehiculo() + "\n");
